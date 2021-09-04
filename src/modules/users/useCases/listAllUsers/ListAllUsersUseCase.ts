@@ -15,9 +15,9 @@ class ListAllUsersUseCase {
             throw new Error("User not found");
         }
 
-        if(user.admin === false){
-            throw new Error("User is not admin");
-        }
+        // if(user.admin === false){
+        //     throw new Error("User is not admin");
+        // }
 
         return this.usersRepository.list();
     }

@@ -7,7 +7,14 @@ class UsersRepository implements IUsersRepository {
     private static INSTANCE: UsersRepository;
 
     private constructor() {
-        this.users = [];
+        this.users = [{
+            id: "123e4567-e89b-12d3-a456-426614174000",
+            name: "Jeferson",
+            email: "jefersonr.santos@outlook.com",
+            admin: true,
+            created_at: new Date(),
+            update_at: new Date()
+        }];
     }
 
     public static getInstance(): UsersRepository {
