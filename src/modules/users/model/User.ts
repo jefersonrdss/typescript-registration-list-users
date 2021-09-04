@@ -3,16 +3,16 @@ import { v4 as uuidv4 } from "uuid";
 class User {
     id?: string;
     name: string;
-    admin: boolean;
+    admin?: boolean;
     email: string;
     created_at: Date;
-    update_at: Date;
+    updated_at: Date;
 
-    // inicialize uuid of null
+    // inicialize uuid of null and admin false
     constructor() {
-        if (!this.id) {
-            this.id = uuidv4();
-        }
+
+        if (!this.id) { this.id = uuidv4(); }
+        if (!this.admin) { this.admin = false; }
     }
 }
 
