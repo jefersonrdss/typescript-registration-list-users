@@ -7,14 +7,7 @@ class UsersRepository implements IUsersRepository {
     private static INSTANCE: UsersRepository;
 
     private constructor() {
-        this.users = [{
-            id: "123e4567-e89b-12d3-a456-426614174000",
-            name: "Jeferson",
-            email: "jefersonr.santos@outlook.com",
-            admin: false,
-            created_at: new Date(),
-            update_at: new Date()
-        }];
+        this.users = [];
     }
 
     public static getInstance(): UsersRepository {
@@ -27,14 +20,15 @@ class UsersRepository implements IUsersRepository {
 
     create({ name, email }: ICreateUserDTO): User {
 
-        //object user
-        const user = {
+        //object user - assing values
+        const user = new User();
+        Object.assign(user, {
             name,
             email,
             admin: false,
-            created_at: new Date(),
-            update_at: new Date()
-        }
+            create_at: new Date(),
+            updated_at: new Date()
+        })
 
         // inserting user
         this.users.push(user);
