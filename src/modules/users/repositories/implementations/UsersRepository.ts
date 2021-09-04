@@ -11,7 +11,7 @@ class UsersRepository implements IUsersRepository {
             id: "123e4567-e89b-12d3-a456-426614174000",
             name: "Jeferson",
             email: "jefersonr.santos@outlook.com",
-            admin: true,
+            admin: false,
             created_at: new Date(),
             update_at: new Date()
         }];
